@@ -5,13 +5,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Option, MenuRendererProps } from "react-select-props";
+import { Option as ReactOption, ReactSelectProps, MenuRendererProps } from "react-select-props";
 import Select = require("react-select");
 
 class SelectTest extends React.Component<React.Props<{}>, {}> {
 
     render() {
-        const options: Option[] = [{ label: "Foo", value: "bar" }];
+        const options: ReactOption[] = [{ label: "Foo", value: "bar" }];
         const onChange = (value: any) => console.log(value);
         const renderMenu = ({
             focusedOption,
@@ -23,7 +23,7 @@ class SelectTest extends React.Component<React.Props<{}>, {}> {
         }: MenuRendererProps) => { return <div></div> };
         const onOpen = () => { return; };
         const onClose = () => { return; };
-        const optionRenderer = (option: Option) => <span>{option.label}</span>
+        const optionRenderer = (option: ReactOption) => <span>{option.label}</span>
 
         return <div>
             <Select
